@@ -1,17 +1,15 @@
 ---
-name: llmwiki-health-skill
+name: llmwiki-health
 description: >-
   Audit the LLM-maintained knowledge wiki for quality issues: orphan pages,
   broken wikilinks, stubs, stale content, and missing frontmatter. Generates
   a severity-tiered health report and auto-fixes what it can.
-license: MIT
+version: 1.0.0
 metadata:
-  author: wangsw
-  version: 1.0.0
-  created: 2026-04-07
-  last_reviewed: 2026-04-07
-  review_interval_days: 90
-  dependencies: []
+  openclaw:
+    emoji: 🩺
+    homepage: https://github.com/wangsw/llm-wiki-skills
+    always: false
 ---
 
 # /wiki-health — Audit the LLM Wiki

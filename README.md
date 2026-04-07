@@ -20,27 +20,30 @@ Instead of re-deriving insights from scratch on every query, you build a persist
 
 ## Installation
 
-### Option A — copy into your vault
+### Via ClawHub
 
 ```bash
-# Copy skills into your vault's Claude commands directory
-cp skills/llmwiki-ingest/SKILL.md /path/to/vault/.claude/commands/wiki-ingest.md
-cp skills/llmwiki-query/SKILL.md  /path/to/vault/.claude/commands/wiki-query.md
-cp skills/llmwiki-health/SKILL.md /path/to/vault/.claude/commands/wiki-health.md
+clawhub skill install llmwiki-ingest
+clawhub skill install llmwiki-query
+clawhub skill install llmwiki-health
+```
 
-# Bootstrap the wiki
+Then bootstrap the wiki in your vault:
+
+```bash
 cp -r _wiki/ /path/to/vault/_wiki/
 ```
 
-### Option B — symlink for development
+### Manual
 
 ```bash
-ln -s $(pwd)/skills/llmwiki-ingest/SKILL.md /path/to/vault/.claude/commands/wiki-ingest.md
-ln -s $(pwd)/skills/llmwiki-query/SKILL.md  /path/to/vault/.claude/commands/wiki-query.md
-ln -s $(pwd)/skills/llmwiki-health/SKILL.md /path/to/vault/.claude/commands/wiki-health.md
+cp skills/llmwiki-ingest/SKILL.md /path/to/vault/.claude/commands/wiki-ingest.md
+cp skills/llmwiki-query/SKILL.md  /path/to/vault/.claude/commands/wiki-query.md
+cp skills/llmwiki-health/SKILL.md /path/to/vault/.claude/commands/wiki-health.md
+cp -r _wiki/ /path/to/vault/_wiki/
 ```
 
-Then open Claude Code in your vault and start:
+Open Claude Code in your vault and start:
 
 ```
 /wiki-ingest my-most-important-note.md
@@ -69,10 +72,7 @@ Synthesized explanation in your own words.
 ## Directory structure
 
 ```
-LLM-Skill/
-├── .claude-plugin/
-│   ├── marketplace.json
-│   └── plugin.json
+LLM-Wiki-Skill/
 ├── skills/
 │   ├── llmwiki-ingest/
 │   │   ├── SKILL.md
@@ -99,6 +99,14 @@ LLM-Skill/
 - **Wikilinks are first-class.** Every page must link to at least one other. Isolated pages are a smell.
 - **One concept per page.** Split broad topics into focused pages.
 - **Every query compounds.** `/wiki-query` files new insights back automatically.
+
+## Publishing to ClawHub
+
+```bash
+clawhub skill publish skills/llmwiki-ingest --version 1.0.0
+clawhub skill publish skills/llmwiki-query  --version 1.0.0
+clawhub skill publish skills/llmwiki-health --version 1.0.0
+```
 
 ## License
 

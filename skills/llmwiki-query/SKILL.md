@@ -1,18 +1,16 @@
 ---
-name: llmwiki-query-skill
+name: llmwiki-query
 description: >-
   Query the LLM-maintained knowledge wiki and synthesize a focused answer.
   Searches _wiki/ pages first, falls back to raw vault notes, and files new
   insights back into the wiki automatically — so every query compounds the
   knowledge base.
-license: MIT
+version: 1.0.0
 metadata:
-  author: wangsw
-  version: 1.0.0
-  created: 2026-04-07
-  last_reviewed: 2026-04-07
-  review_interval_days: 90
-  dependencies: []
+  openclaw:
+    emoji: 🔍
+    homepage: https://github.com/wangsw/llm-wiki-skills
+    always: false
 ---
 
 # /wiki-query — Query the LLM Wiki
