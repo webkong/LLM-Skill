@@ -100,13 +100,6 @@ LLM-Wiki-Skill/
 - **One concept per page.** Split broad topics into focused pages.
 - **Every query compounds.** `/wiki-query` files new insights back automatically.
 
-## Publishing to ClawHub
-
-```bash
-clawhub skill publish skills/llmwiki-ingest --version 1.0.0
-clawhub skill publish skills/llmwiki-query  --version 1.0.0
-clawhub skill publish skills/llmwiki-health --version 1.0.0
-```
 
 ## License
 
