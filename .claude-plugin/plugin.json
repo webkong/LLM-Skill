@@ -1,0 +1,11 @@
+{
+  "name": "llm-wiki-skills",
+  "version": "1.0.0",
+  "description": "LLM-maintained knowledge wiki skills for Claude Code",
+  "author": "wangsw",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": ""
+  }
+}
